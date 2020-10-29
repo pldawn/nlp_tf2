@@ -1,12 +1,12 @@
 import tensorflow as tf
-import keras as krs
+import tensorflow.keras as krs
 
 
-class SingleVectorAddtiveAttention(krs.layers.Layer):
+class SingleVectorAdditiveAttention(krs.layers.Layer):
     def __init__(self, units, **kwargs):
         self.units = units
         self.kernel = None
-        super(SingleVectorAddtiveAttention, self).__init__(**kwargs)
+        super(SingleVectorAdditiveAttention, self).__init__(**kwargs)
 
     def build(self, input_shape):
         self.kernel = self.add_weight(name='kernel', shape=(input_shape[-1], self.units),
@@ -29,5 +29,5 @@ class SingleVectorAddtiveAttention(krs.layers.Layer):
 
 
 if __name__ == "__main__":
-    agent = SingleVectorAddtiveAttention(2)
+    agent = SingleVectorAdditiveAttention(2)
     print(agent(tf.constant([[[1.0], [1.0]], [[1.0], [1.0]]])))

@@ -1,4 +1,4 @@
-import keras_contrib as krsa
+import tensorflow_addons as tfa
 
 
 class CRF:
@@ -14,8 +14,7 @@ class CRF:
 
     def build_layers(self):
         layers = []
-        layer = krsa.layers.CRF(units=self.units, sparse_target=self.sparse_target,
-                                input_dim=self.input_dim, **self.kwargs)
+        layer = tfa.layers.CRF(units=self.units, sparse_target=self.sparse_target, input_dim=self.input_dim, **self.kwargs)
         layers.append(layer)
 
         return layers

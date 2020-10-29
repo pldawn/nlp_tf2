@@ -1,4 +1,4 @@
-import keras as krs
+import tensorflow.keras as krs
 
 
 class Recurrent:

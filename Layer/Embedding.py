@@ -1,4 +1,4 @@
-import keras as krs
+import tensorflow.keras as krs
 from gensim.models import Word2Vec
 import os
 
